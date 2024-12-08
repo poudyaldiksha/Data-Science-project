@@ -1,0 +1,26 @@
+In the context of code, replacing -200 values with the median of a column is a data preprocessing step. Here's why this is typically done:
+
+1. Handling Missing or Invalid Data
+The value -200 is likely a placeholder for missing or invalid measurements in the dataset. Using placeholder values like -200 is common in datasets where missing data needs to be flagged explicitly.
+Keeping these -200 values in the dataset would distort statistical calculations like mean, standard deviation, and model predictions.
+2. Using the Median
+The median is a robust measure of central tendency, meaning it is not significantly affected by outliers or extreme values in the data.
+By replacing -200 with the column's median, you preserve the distribution of the data without introducing bias that might result from using the mean, especially in the presence of skewed data.
+3. Ensuring Data Quality
+Many machine learning algorithms and statistical analyses cannot handle missing or invalid values directly. Replacing them with meaningful estimates ensures that the data is suitable for analysis.
+4. Consistency
+The preprocessing ensures that your dataset remains consistent and interpretable. If the -200 values represent missing measurements, replacing them aligns with the goal of creating a clean dataset for analysis.
+Example:
+If a column contains these values:
+
+[1.2, -200, 3.4, 2.8, -200]
+And the median of the non--200 values is 2.8, replacing -200 values would result in:
+
+[1.2, 2.8, 3.4, 2.8, 2.8]
+This approach minimizes the impact of missing data while retaining the integrity of the dataset.
+
+
+
+
+
+
